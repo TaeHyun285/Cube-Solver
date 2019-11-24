@@ -1,3 +1,1 @@
-# Cube-Solver
 
-Hello World
