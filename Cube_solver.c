@@ -4,7 +4,7 @@
 #include <windows.h>
 #include <time.h>
 
-//íë¸Œ íšŒì „ í•¨ìˆ˜
+//Å¥ºê È¸Àü ÇÔ¼ö
 void func_L ();
 void func_sym_L();
 void func_F ();
@@ -21,32 +21,32 @@ void func_sym_D();
 void rotate_left();
 void rotate_right();
 
-//íë¸Œ ì¶œë ¥ í•¨ìˆ˜
+//Å¥ºê Ãâ·Â ÇÔ¼ö
 void print_current_cube();
 void textcolor(int color_name);
 
-//íë¸Œ ì…ë ¥ í•¨ìˆ˜
+//Å¥ºê ÀÔ·Â ÇÔ¼ö
 void func_init(char *file_name);
 
-//ìƒìˆ˜ê°’(íë¸Œì—ì„œ ë³€í•˜ì§€ì•ŠëŠ” ì¤‘ì•™ì— ìœ„ì¹˜í•œ ìƒ‰) ì´ˆê¸°í™” í•¨ìˆ˜
+//»ó¼ö°ª(Å¥ºê¿¡¼­ º¯ÇÏÁö¾Ê´Â Áß¾Ó¿¡ À§Ä¡ÇÑ »ö) ÃÊ±âÈ­ ÇÔ¼ö
 void reset_constant();
 
-//íë¸Œì˜ ì…ë ¥ì´ ì˜³ë°”ë¥¸ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
+//Å¥ºêÀÇ ÀÔ·ÂÀÌ ¿Ç¹Ù¸¥Áö È®ÀÎÇÏ´Â ÇÔ¼ö
 int cube_valid_check();
 
-//ê°ê°ì˜ ì§€ì •ëœ ë¸”ëŸ­ì„ ë§ì¶”ëŠ” í•¨ìˆ˜
+//°¢°¢ÀÇ ÁöÁ¤µÈ ºí·°À» ¸ÂÃß´Â ÇÔ¼ö
 void front_down();
 void front_right_down();
 void front_right();
 
-//íë¸Œë¥¼ ë§ì¶”ê¸°ìœ„í•œ ê³µì‹(íë¸Œ íšŒì „ì˜ ì¡°í•©)
+//Å¥ºê¸¦ ¸ÂÃß±âÀ§ÇÑ °ø½Ä(Å¥ºê È¸ÀüÀÇ Á¶ÇÕ)
 void func_front_right();
 void func_up_edge();
 void func_middle_edge();
 void func_up_side();
 void func_middle_vertex();
 
-//ìƒìˆ˜ê°’
+//»ó¼ö°ª
 char LEFT=' ';
 char FRONT=' ';
 char RIGHT=' ';
@@ -54,7 +54,7 @@ char BACK=' ';
 char UP=' ';
 char DOWN=' ';
 
-//ì…ë ¥ê°’
+//ÀÔ·Â°ª
 char l[3][3]={{'O','O','O'},{'O','O','O'},{'O','O','O'}};
 char f[3][3]={{'G','G','G'},{'G','G','G'},{'G','G','G'}};
 char r[3][3]={{'R','R','R'},{'R','R','R'},{'R','R','R'}};
@@ -62,40 +62,40 @@ char b[3][3]={{'B','B','B'},{'B','B','B'},{'B','B','B'}};
 char u[3][3]={{'W','W','W'},{'W','W','W'},{'W','W','W'}};
 char d[3][3]={{'Y','Y','Y'},{'Y','Y','Y'},{'Y','Y','Y'}};
 
-//í¬ì¸í„°
+//Æ÷ÀÎÅÍ
 char (*pl)[3], (*pf)[3], (*pr)[3], (*pb)[3], (*pu)[3], (*pd)[3];
 
-//íë¸Œë¥¼ ëŒë¦° íšŸìˆ˜
+//Å¥ºê¸¦ µ¹¸° È½¼ö
 int cnt=0;
 
 int checker=0;
 
-//íë¸Œ ì¶œë ¥ ì—¬ë¶€ (0ì¼ì‹œ íë¸Œ ë¯¸ì¶œë ¥ / 1ì¼ì‹œ íë¸Œ ì¶œë ¥)
+//Å¥ºê Ãâ·Â ¿©ºÎ (0ÀÏ½Ã Å¥ºê ¹ÌÃâ·Â / 1ÀÏ½Ã Å¥ºê Ãâ·Â)
 int flag;
 int temp_flag;
 
-//ì…ë ¥ ë°©ì‹ ì„ íƒ
+//ÀÔ·Â ¹æ½Ä ¼±ÅÃ
 int option;
 
 int main(int argc, char *argv[]){
     while(1){
-        printf("1.ëœë¤í•œ ì…ë ¥ê°’ ì„¤ì •\n");
-        printf("2.íŒŒì¼ë¡œë¶€í„° ì…ë ¥ê°’ ë°›ì•„ì˜¤ê¸°\n");
-        printf("3.ëë‚´ê¸°\n\n");
+        printf("1.·£´ıÇÑ ÀÔ·Â°ª ¼³Á¤\n");
+        printf("2.ÆÄÀÏ·ÎºÎÅÍ ÀÔ·Â°ª ¹Ş¾Æ¿À±â\n");
+        printf("3.³¡³»±â\n\n");
         fflush(stdin);
         scanf("%d",&option);
 
         if(option==1 || option==2 || option==3) break;
-        printf("\nì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.\n\n");
+        printf("\nÀß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.\n\n");
     }
 
     if(option==1){
         srand((int)time(NULL));
 
-        //í¬ì¸í„°ì— í•¨ìˆ˜ ì£¼ì†Œ ì§€ì •
+        //Æ÷ÀÎÅÍ¿¡ ÇÔ¼ö ÁÖ¼Ò ÁöÁ¤
         pl = l; pf = f; pr = r; pb = b; pu = u; pd = d;
 
-        //ì…ë ¥ë°›ì€ í•¨ìˆ˜ë¡œ ë¶€í„° ìƒìˆ˜ê°’ ì´ˆê¸°í™”
+        //ÀÔ·Â¹ŞÀº ÇÔ¼ö·Î ºÎÅÍ »ó¼ö°ª ÃÊ±âÈ­
         reset_constant();
 
         flag=0;
@@ -138,7 +138,7 @@ int main(int argc, char *argv[]){
     }
 
     else if(option==2){
-        // íŒŒì¼ë¡œë¶€í„° ë°°ì—´ ì„¸íŒ…
+        // ÆÄÀÏ·ÎºÎÅÍ ¹è¿­ ¼¼ÆÃ
         char file_name[100] = "cube_init";
 
         if(argc==2) {
@@ -151,16 +151,16 @@ int main(int argc, char *argv[]){
 
         func_init(file_name);
 
-        //í¬ì¸í„°ì— í•¨ìˆ˜ ì£¼ì†Œ ì§€ì •
+        //Æ÷ÀÎÅÍ¿¡ ÇÔ¼ö ÁÖ¼Ò ÁöÁ¤
         pl = l; pf = f; pr = r; pb = b; pu = u; pd = d;
 
-        //ì…ë ¥ë°›ì€ í•¨ìˆ˜ë¡œ ë¶€í„° ìƒìˆ˜ê°’ ì´ˆê¸°í™”
+        //ÀÔ·Â¹ŞÀº ÇÔ¼ö·Î ºÎÅÍ »ó¼ö°ª ÃÊ±âÈ­
         reset_constant();
 
-        //ì…ë ¥ì´ ì˜³ë°”ë¥¸ì§€ í™•ì¸
+        //ÀÔ·ÂÀÌ ¿Ç¹Ù¸¥Áö È®ÀÎ
         int validity = cube_valid_check();
         if(validity == 0){
-            printf("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.");
+            printf("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
             scanf("%c",&validity);
             exit(0);
         }
@@ -173,7 +173,7 @@ int main(int argc, char *argv[]){
     flag=1;
     cnt=0;
 
-    //1ë‹¨ê³„ - ì•„ë«ë©´ ì‹­ì ë§ì¶”ê¸°
+    //1´Ü°è - ¾Æ·§¸é ½ÊÀÚ ¸ÂÃß±â
     while(pd[0][1]!=DOWN || pd[1][0]!=DOWN || pd[1][2]!=DOWN || pd[2][1]!=DOWN || pl[2][1]!=LEFT || pf[2][1]!=FRONT || pr[2][1]!=RIGHT || pb[2][1]!=BACK){
         front_down();
         rotate_left();
@@ -188,7 +188,7 @@ int main(int argc, char *argv[]){
         rotate_left();
     }
 
-    //2ë‹¨ê³„ - ì•„ë«ë©´ ê¼­ì§“ì  ë§ì¶”ê¸°
+    //2´Ü°è - ¾Æ·§¸é ²ÀÁşÁ¡ ¸ÂÃß±â
     while(pd[0][0]!=DOWN || pd[0][2]!=DOWN || pd[2][0]!=DOWN || pd[2][2]!=DOWN || pl[2][0]!=LEFT || pf[2][0]!=FRONT || pr[2][0]!=RIGHT || pb[2][0]!=BACK || pl[2][2]!=LEFT || pf[2][2]!=FRONT || pr[2][2]!=RIGHT || pb[2][2]!=BACK){
         front_right_down();
         rotate_left();
@@ -203,7 +203,7 @@ int main(int argc, char *argv[]){
         rotate_left();
     }
 
-    //3ë‹¨ê³„ - ë‘˜ì§¸ ì¤„ ë§ì¶”ê¸°
+    //3´Ü°è - µÑÂ° ÁÙ ¸ÂÃß±â
     while(pl[1][0]!=LEFT || pf[1][0]!=FRONT || pr[1][0]!=RIGHT || pb[1][0]!=BACK || pl[1][2]!=LEFT || pf[1][2]!=FRONT || pr[1][2]!=RIGHT || pb[1][2]!=BACK){
         front_right();
         rotate_left();
@@ -218,7 +218,7 @@ int main(int argc, char *argv[]){
         rotate_left();
     }
 
-    //4ë‹¨ê³„ - ìœ—ë©´ ëª¨ì„œë¦¬ ë§ì¶”ê¸°
+    //4´Ü°è - À­¸é ¸ğ¼­¸® ¸ÂÃß±â
     while(pu[0][1]!=UP || pu[1][0]!=UP || pu[1][2]!=UP || pu[2][1]!=UP){
 
         if(pu[1][0]==UP && pu[1][2]==UP){
@@ -246,7 +246,7 @@ int main(int argc, char *argv[]){
 
     }
 
-    //5ë‹¨ê³„ - ì˜†ë©´ ìœ„ìª½ ëª¨ì„œë¦¬ ë§ì¶”ê¸°
+    //5´Ü°è - ¿·¸é À§ÂÊ ¸ğ¼­¸® ¸ÂÃß±â
     checker=0;
 
     while(pl[0][1]!=LEFT || pf[0][1]!=FRONT || pr[0][1]!=RIGHT || pb[0][1]!=BACK){
@@ -273,7 +273,7 @@ int main(int argc, char *argv[]){
 
     }
 
-    //6ë‹¨ê³„ - ìœ—ë©´ ëª¨ë‘ ë§ì¶”ê¸°
+    //6´Ü°è - À­¸é ¸ğµÎ ¸ÂÃß±â
     while(pu[0][0]!=UP || pu[0][2]!=UP || pu[2][0]!=UP || pu[2][1]!=UP){
 
         if(pf[0][0]==UP && pf[0][2]==UP && pb[0][0]==UP && pb[0][2]==UP || pl[0][0]==UP && pl[0][2]==UP && pf[0][2]==UP && pb[0][0]==UP || pl[0][2]==UP && pr[0][2]==UP && pb[0][2]==UP && pu[2][2]==UP || pf[0][0]==UP && pr[0][0]==UP && pb[0][0]==UP && pu[0][0]==UP || pl[0][0]==UP && pl[0][2]==UP && pu[0][2]==UP && pu[2][2]==UP || pf[0][2]==UP && pb[0][0]==UP && pu[0][0]==UP && pu[2][0]==UP || pl[0][2]==UP && pb[0][0]==UP && pu[0][0]==UP && pu[2][2]==UP){
@@ -283,7 +283,7 @@ int main(int argc, char *argv[]){
 
     }
 
-    //7ë‹¨ê³„ - ì˜†ë©´ ê¼­ì§“ì  ë§ì¶”ê¸°
+    //7´Ü°è - ¿·¸é ²ÀÁşÁ¡ ¸ÂÃß±â
     checker=0;
 
     while(pl[0][0]!=LEFT || pf[0][0]!=FRONT || pr[0][0]!=RIGHT || pb[0][0]!=BACK || pl[0][2]!=LEFT || pf[0][2]!=FRONT || pr[0][2]!=RIGHT || pb[0][2]!=BACK){
@@ -315,7 +315,7 @@ int main(int argc, char *argv[]){
 
 
 int cube_valid_check(){
-    //ê°€ìš´ë° ìƒìˆ˜ ì¤‘ë³µ í™•ì¸
+    //°¡¿îµ¥ »ó¼ö Áßº¹ È®ÀÎ
     int cnt_o=0,cnt_g=0,cnt_r=0,cnt_b=0,cnt_w=0,cnt_y=0;
     char a;
 
@@ -917,7 +917,7 @@ void func_init(char *file_name) {
 
     fp = fopen(file_name, "r");
     if(fp == NULL) {
-        printf("íŒŒì¼ì´ ì—´ë¦¬ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.\n");
+        printf("ÆÄÀÏÀÌ ¿­¸®Áö ¾Ê¾Ò½À´Ï´Ù.\n");
         return;
     }
 
@@ -936,7 +936,7 @@ void reset_constant(){
 
 void front_down(){
     while(pf[2][1]!=FRONT || pd[0][1]!=DOWN){
-        if(pf[2][1]==DOWN && pd[0][1]==FRONT){        //ë°‘ìª½ì— ìˆëŠ”ê±° ìœ„ë¡œ
+        if(pf[2][1]==DOWN && pd[0][1]==FRONT){        //¹ØÂÊ¿¡ ÀÖ´Â°Å À§·Î
         func_F(); func_F();
         }
         else if(pd[1][2]==DOWN && pr[2][1]==FRONT || pd[1][2]==FRONT && pr[2][1]==DOWN){
@@ -949,7 +949,7 @@ void front_down(){
             func_L(); func_L();
         }
 
-        if(pf[1][2]==DOWN && pr[1][0]==FRONT){      //ì¤‘ê°„ì— ìˆëŠ”ê±° ìœ„ë¡œ
+        if(pf[1][2]==DOWN && pr[1][0]==FRONT){      //Áß°£¿¡ ÀÖ´Â°Å À§·Î
             func_R(); func_U(); func_sym_R();
         }
         else if(pf[1][0]==DOWN && pl[1][2]==FRONT){
@@ -968,7 +968,7 @@ void front_down(){
             func_sym_B(); func_U(); func_B();
         }
 
-        if(pu[0][1]==FRONT && pb[0][1]==DOWN || pu[0][1]==DOWN && pb[0][1]==FRONT){     //ìœ„ì— ìˆëŠ”ê±°ë¥¼ ë°”ë¡œ ìœ„ìª½ìœ¼ë¡œ ëŒë¦¬ê¸°
+        if(pu[0][1]==FRONT && pb[0][1]==DOWN || pu[0][1]==DOWN && pb[0][1]==FRONT){     //À§¿¡ ÀÖ´Â°Å¸¦ ¹Ù·Î À§ÂÊÀ¸·Î µ¹¸®±â
             func_U(); func_U();
         }
         else if(pu[1][0]==FRONT && pl[0][1]==DOWN || pu[1][0]==DOWN && pl[0][1]==FRONT){
@@ -978,7 +978,7 @@ void front_down(){
             func_U();
         }
 
-        if(pf[0][1]==FRONT && pu[2][1]==DOWN){      //ìœ„ì—ì„œ ì•„ë˜ë¡œ ë‚´ë¦¬ê¸°
+        if(pf[0][1]==FRONT && pu[2][1]==DOWN){      //À§¿¡¼­ ¾Æ·¡·Î ³»¸®±â
             func_F(); func_F();
         }
         else if(pf[1][0]==FRONT && pl[1][2]==DOWN){
@@ -995,7 +995,7 @@ void front_down(){
 
 void front_right_down(){
     while(pf[2][2]!=FRONT || pr[2][0]!=RIGHT || pd[0][2]!=DOWN){
-        if(pf[2][2]==DOWN && pr[2][0]==FRONT && pd[0][2]==RIGHT || pf[2][2]==RIGHT && pr[2][0]==DOWN && pd[0][2]==FRONT){       //ë°‘ì—ìˆëŠ”ê±° ìœ„ë¡œ ì˜¬ë¦¬ê¸°
+        if(pf[2][2]==DOWN && pr[2][0]==FRONT && pd[0][2]==RIGHT || pf[2][2]==RIGHT && pr[2][0]==DOWN && pd[0][2]==FRONT){       //¹Ø¿¡ÀÖ´Â°Å À§·Î ¿Ã¸®±â
             func_R(); func_U(); func_sym_R();
         }
         else if(pl[2][2]==DOWN && pf[2][0]==FRONT && pd[0][0]==RIGHT || pl[2][2]==RIGHT && pf[2][0]==DOWN && pd[0][0]==FRONT || pl[2][2]==FRONT && pf[2][0]==RIGHT && pd[0][0]==DOWN){
@@ -1008,7 +1008,7 @@ void front_right_down(){
             func_B(); func_U(); func_sym_B();
         }
 
-        if(pu[0][0]==DOWN && pl[0][0]==FRONT && pb[0][2]==RIGHT || pu[0][0]==RIGHT && pl[0][0]==DOWN && pb[0][2]==FRONT || pu[0][0]==FRONT && pl[0][0]==RIGHT && pb[0][2]==DOWN){       //ë°”ë¡œ ìœ„ë¡œ ëª¨ìœ¼ê¸°
+        if(pu[0][0]==DOWN && pl[0][0]==FRONT && pb[0][2]==RIGHT || pu[0][0]==RIGHT && pl[0][0]==DOWN && pb[0][2]==FRONT || pu[0][0]==FRONT && pl[0][0]==RIGHT && pb[0][2]==DOWN){       //¹Ù·Î À§·Î ¸ğÀ¸±â
             func_U(); func_U();
         }
         else if(pu[2][0]==DOWN && pf[0][0]==FRONT && pl[0][2]==RIGHT || pu[2][0]==RIGHT && pf[0][0]==DOWN && pl[0][2]==FRONT || pu[2][0]==FRONT && pf[0][0]==RIGHT && pl[0][2]==DOWN){
@@ -1018,7 +1018,7 @@ void front_right_down(){
             func_U();
         }
 
-        if(pf[0][2]==DOWN && pu[2][2]==FRONT && pr[0][0]==RIGHT){       //ì•„ë˜ë¡œ ë§ì¶”ê¸°
+        if(pf[0][2]==DOWN && pu[2][2]==FRONT && pr[0][0]==RIGHT){       //¾Æ·¡·Î ¸ÂÃß±â
             func_sym_F(); func_sym_U(); func_F();
         }
         else if(pf[0][2]==RIGHT && pu[2][2]==DOWN && pr[0][0]==FRONT){
@@ -1031,7 +1031,7 @@ void front_right_down(){
 }
 
 void front_right(){
-    if(pf[1][2]==RIGHT && pr[1][0]==FRONT){     //ì¤‘ê°„ì—ì„œ ìœ„ë¡œ ì˜¬ë¦¬ê¸°
+    if(pf[1][2]==RIGHT && pr[1][0]==FRONT){     //Áß°£¿¡¼­ À§·Î ¿Ã¸®±â
         func_front_right();
     }
     else if(pl[1][2]==FRONT && pf[1][0]==RIGHT || pl[1][2]==RIGHT && pf[1][0]==FRONT){
@@ -1044,7 +1044,7 @@ void front_right(){
         rotate_left(); func_front_right(); rotate_right();
     }
 
-    if(pu[1][0]==FRONT && pl[0][1]==RIGHT){     //ì˜ëª»ëœ ìƒíƒœë¡œ ì˜¤ë¥¸ìª½ ìœ„ë¡œë³´ë‚´ê¸°
+    if(pu[1][0]==FRONT && pl[0][1]==RIGHT){     //Àß¸øµÈ »óÅÂ·Î ¿À¸¥ÂÊ À§·Îº¸³»±â
         func_U(); func_U();
     }
     else if(pu[0][1]==FRONT && pb[0][1]==RIGHT){
@@ -1054,7 +1054,7 @@ void front_right(){
         func_sym_U();
     }
 
-    if(pu[1][0]==RIGHT && pl[0][1]==FRONT){     //ì˜³ë°”ë¥¸ ìƒíƒœë¡œ ì•ìª½ ìœ„ë¡œ ë³´ë‚´ê¸°
+    if(pu[1][0]==RIGHT && pl[0][1]==FRONT){     //¿Ç¹Ù¸¥ »óÅÂ·Î ¾ÕÂÊ À§·Î º¸³»±â
         func_sym_U();
     }
     else if(pu[0][1]==RIGHT && pb[0][1]==FRONT){
